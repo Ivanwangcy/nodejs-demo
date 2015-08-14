@@ -5,3 +5,4 @@
 npm install
 npm start
 ```
+页面采用bootstrap和jquery
