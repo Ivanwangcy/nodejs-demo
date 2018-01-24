@@ -35,3 +35,28 @@ describe('assert', function () {
     assert.throws(fn, Error) // 抛出的错误符合某个构造函数
   })
 })
+
+
+
+// 测试用例不成功
+describe('assertError', function() {
+  it('抛出 AssertionError: { a: { b: 1 } } deepEqual { a: { b: 2 } }', function() {
+    var objA = {
+      a: {
+        b: 1
+      }
+    }
+
+    var objB = {
+      a: {
+        b: 2
+      }
+    }
+
+    assert.deepEqual(objA, objB, '不相同')
+  })
+
+  it('抛出 AssertionError [ERR_ASSERTION]', function() {
+    assert.fail(1, 2, '错误信息');
+  })
+})
